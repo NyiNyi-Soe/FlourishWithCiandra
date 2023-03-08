@@ -1,0 +1,115 @@
+<!-- Header Codes -->
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"> 
+</script>
+
+
+<script>
+  (function(w, d, t, h, s, n) {
+    w.FlodeskObject = n;
+    var fn = function() {
+      (w[n].q = w[n].q || []).push(arguments);
+    };
+    w[n] = w[n] || fn;
+    var f = d.getElementsByTagName(t)[0];
+    var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+    var sm = d.createElement(t);
+    sm.async = true;
+    sm.type = 'module';
+    sm.src = h + s + '.mjs' + v;
+    f.parentNode.insertBefore(sm, f);
+    var sn = d.createElement(t);
+    sn.async = true;
+    sn.noModule = true;
+    sn.src = h + s + '.js' + v;
+    f.parentNode.insertBefore(sn, f);
+  })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+</script>
+<script>
+  window.fd('form', {
+    formId: '63f92c93864dc24814353f92'
+  });
+</script>
+<script>
+  (function(w, d, t, h, s, n) {
+    w.FlodeskObject = n;
+    var fn = function() {
+      (w[n].q = w[n].q || []).push(arguments);
+    };
+    w[n] = w[n] || fn;
+    var f = d.getElementsByTagName(t)[0];
+    var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+    var sm = d.createElement(t);
+    sm.async = true;
+    sm.type = 'module';
+    sm.src = h + s + '.mjs' + v;
+    f.parentNode.insertBefore(sm, f);
+    var sn = d.createElement(t);
+    sn.async = true;
+    sn.noModule = true;
+    sn.src = h + s + '.js' + v;
+    f.parentNode.insertBefore(sn, f);
+  })(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+</script>
+
+<!-- End Header Codes -->
+
+<!-- Footer Codes -->
+
+<!-- Back To Top Button -->
+<!-- HTML -->
+<button id="back-to-top">
+  <div class="btt-background"></div>
+  <div class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-labelledby="title" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <title></title>
+      <path data-name="layer2" fill="none" stroke="#202020" stroke-miterlimit="10" stroke-width="2" d="M32 10v46" stroke-linejoin="round" stroke-linecap="round"></path>
+      <path data-name="layer1" fill="none" stroke="#202020" stroke-miterlimit="10" stroke-width="2" d="M50 20 L32 4 14 20" stroke-linejoin="round" stroke-linecap="round"></path>
+    </svg>
+  </div>
+  <p class="text">TOP</p>
+</button>
+
+<!-- Javascript -->
+<script>
+(function() {
+  let throttlePause;
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('#back-to-top')) return;
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  })
+
+  const throttle = (callback, time) => {
+    if (throttlePause) return;
+
+    throttlePause = true;
+    setTimeout(() => {
+      callback();
+      throttlePause = false;
+    }, time);
+  };
+
+  const checkPos = () => {
+    let pos = document.documentElement.scrollTop,
+        revealHeight = window.innerHeight * 1,
+        bttButton = document.querySelector('#back-to-top');
+    if (pos >= revealHeight) {
+      bttButton.classList.add('show');
+    } else {
+      bttButton.classList.remove('show');
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    throttle(checkPos, 150);
+  });
+  window.addEventListener('DOMContentLoaded', checkPos)
+}());
+</script>
+<!-- End back to top button -->
+
+<!-- End Footer Codes -->
