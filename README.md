@@ -1,4 +1,6 @@
 # FlourishWithCiandra
+![Logo-Image](Logo.png)
+
 Ciandra is an English eating disorder recovery coach &amp; trainee counsellor. 
 Services that she offers are:
 * 1:1 Coaching
