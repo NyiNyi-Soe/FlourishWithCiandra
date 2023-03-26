@@ -1,139 +1,158 @@
 .list-item[data-is-card-enabled="true"] {border-radius:20px}
 
-// Stretchy Navigation Line - v2 //
+// Stretchy Navigation Line - v2
 
 nav.header-nav-list a::after, a.header-nav-item::after {
-  content: '';
-  background: #DC7C90; //color
-  height: 3px; //thickness
-  width: 0;
-  display: block;
-  margin-top: 0px !important;
-  transition: width .3s; //animation speed
-  margin: 0 auto;
+content: '';
+background: #DC7C90; //color
+height: 3px; //thickness
+width: 0;
+display: block;
+margin-top: 0px !important;
+transition: width .3s; //animation speed
+margin: 0 auto;
 }
 
 nav.header-nav-list a:hover::after, .header-nav-item:hover::after {
-  width: 100%;
+width: 100%;
 }
 
 .header-nav-item--active a {
-  background-image: none !important;
+background-image: none !important;
 }
 
 .header-nav .header-nav-item--folder .header-nav-folder-content{
-  min-width: fit-content;
+min-width: fit-content;
 }
 
 .header-nav-folder-item{
-  width: fit-content;
-  margin-left: auto;
+width: fit-content;
+margin-left: auto;
 }
 
 .tweak-global-animations-animation-type-flex .header-nav-item:not( .header-nav-item--folder ) a::after {
 
-  all : unset;
+all : unset;
 
 }
 
+//Blur on hover
+nav.header-nav-list a {
+-webkit-transition: all 0.2s linear;
+-moz-transition: all 0.2s linear;
+-o-transition: all 0.2s linear;
+-ms-transition: all 0.2s linear;
+transition: all 0.2s linear;
+}
+
+nav.header-nav-list:hover a {
+text-shadow: 0px 0px 2px #aaa;
+color: transparent;
+}
+
+nav.header-nav-list a:hover {	
+text-shadow: 0px 0px .5px #000;
+}
+
+
 //Remove Link Underline
 h1,h2,h3,h4,p,code,nav {
-  a,span {
-    background-image: none!important;
-    text-decoration: none!important;
-  }
+a,span {
+  background-image: none!important;
+  text-decoration: none!important;
+}
 }
 
 
 
 //shadow on hero text & button
 #block-yui_3_17_2_1_1678095308067_886816, #block-yui_3_17_2_1_1678095308067_938365{
-  filter:drop-shadow(0.5px 1px 1px #444);
+filter:drop-shadow(0.5px 1px 1px #444);
 }
 
 
 
 //back to top button
 #back-to-top {
-  z-index:999;
-  position:fixed;
-  display:flex;
-  bottom:0;
-  right:0;
-  min-width: 55px;
-  min-height: 1px;
-  flex-direction: column;
-  gap: 8px;
-  align-items:center;
-  justify-content:center;
-  box-sizing:content-box;
-  margin: 8px;
-  padding: 8px;
-  cursor:pointer;
-  opacity:0;
-  overflow:hidden;
-  transform: translateY(0px) scale(1);
-  background:transparent;
-  border-radius: 5px;
-  border-width: 0px;
-  border-color: #000000;
-  border-style:solid;
-  visibility:hidden;
+z-index:999;
+position:fixed;
+display:flex;
+bottom:0;
+right:0;
+min-width: 55px;
+min-height: 1px;
+flex-direction: column;
+gap: 8px;
+align-items:center;
+justify-content:center;
+box-sizing:content-box;
+margin: 8px;
+padding: 8px;
+cursor:pointer;
+opacity:0;
+overflow:hidden;
+transform: translateY(0px) scale(1);
+background:transparent;
+border-radius: 5px;
+border-width: 0px;
+border-color: #000000;
+border-style:solid;
+visibility:hidden;
+transition: opacity .3s ease,
+  transform .3s ease,
+  visibility 0s ease .3s;
+will-change:transform;
+backdrop-filter: blur(0px);
+
+&.show{
+  transform: translateY(0px);
+  opacity:1;
+  visibility: visible;
   transition: opacity .3s ease,
     transform .3s ease,
-    visibility 0s ease .3s;
-  will-change:transform;
-  backdrop-filter: blur(0px);
+    visibility 0s ease 0s;
+}
+.icon{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  line-height:0;
+  height:auto;
+  width:auto;
+}
+.text{
+  position:relative;
+  margin:0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+}
+svg{
+  width: 29px;
+  height: 29px;
+}
+path{
+  stroke-width: 8px;
+  stroke: #000;
+}
+.btt-background {
+  box-sizing:border-box;
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  background-color: #f5f5f5;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
 
-  &.show{
-    transform: translateY(0px);
-    opacity:1;
-    visibility: visible;
-    transition: opacity .3s ease,
-      transform .3s ease,
-      visibility 0s ease 0s;
-  }
-  .icon{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    line-height:0;
-    height:auto;
-    width:auto;
-  }
-  .text{
-    position:relative;
-    margin:0;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #000;
-    text-transform: uppercase;
-  }
-  svg{
-    width: 29px;
-    height: 29px;
-  }
-  path{
-    stroke-width: 8px;
-    stroke: #000;
-  }
-  .btt-background {
-    box-sizing:border-box;
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    background-color: #f5f5f5;
-    opacity: 0;
-    transition: opacity .3s ease;
-  }
-
-  &:hover{
-    transform:translateY(-3px);
-    opacity: .85;
-  }
-  &:active{
-    transform: translateY(-3px) scale(.95);
-  }
+&:hover{
+  transform:translateY(-3px);
+  opacity: .85;
+}
+&:active{
+  transform: translateY(-3px) scale(.95);
+}
 }
